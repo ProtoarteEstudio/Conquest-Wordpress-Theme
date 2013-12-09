@@ -1,0 +1,396 @@
+/*
+ * Name:      Conquest
+ * Description:   Conquest theme list-style-position
+ */
+
+ 
+/*
+ * Tags
+ */
+.tags {
+  margin-bottom: @global-large-margin;
+  font-size: 0.857em;
+  span {
+    background: @conquest-primary-menu-top-link;
+    padding: 8px 10px;
+    font-weight: 700;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+  .tag a {
+    display: block;
+    position: relative;
+    padding: 8px 10px;
+    font-weight: 600;
+    line-height: 1em;
+    text-transform: uppercase;
+    color: #1f1d1d;
+    &:before {
+      content: '';
+      position: absolute;
+      left: -3px;
+      top: 50%;
+      margin-top: -3px;
+      display: block;
+      height: 6px;
+      width: 6px;
+      background: #ffd800;
+    }
+  }
+  .tag.first a:before {
+    display: none;
+  }
+}
+
+
+/*
+ * Ad blocks
+ */
+.comment-count {
+  a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    .count {
+      position: relative;
+      display: block;
+      background: @conquest-primary-menu-top-bg;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: 700;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        right: 1px;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 5px 5px 0 0;
+        border-color: @conquest-primary-menu-top-bg transparent transparent transparent;
+      }
+    }
+    .label {
+      font-size: 0.5em;
+      color: @global-color;
+      text-transform: uppercase;
+    }
+    &:hover {
+      text-decoration: none;
+      .count {
+        background: @conquest-color-primary;
+      }
+    }
+  }
+  &.large {
+    text-align: right;
+    a {
+      .count {
+        padding:5px 20px;
+      }
+    }
+  }
+}
+@media only screen and (min-width : @breakpoint-medium) {
+  .comment-count {
+    &.large {
+      text-align: right;
+      a {
+        .count {
+          padding:10px 30px;
+        }
+        .label {
+          font-size: 0.75em;
+        }
+      }
+    }
+  }
+}
+
+
+/*
+ * Ad blocks
+ */
+.ad-block {
+  img {
+    display: block;
+  }
+}
+
+
+/*
+ * Search form
+ */
+form.search-form {
+  .screen-reader-text {
+    display: none;
+  }
+  input.search-field {
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+  }
+  input.search-submit {
+    display: none;
+  }
+}
+#site-search {
+  form.search-form {
+    input.search-field {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: auto;
+      border: 0;
+      width: 260px;
+      background: white;
+    }
+  }
+}
+
+
+ /*
+  * Header
+  */
+#masthead {
+  background: #f7f7f7;
+  #masthead-inner {
+    position: relative;
+  }
+}
+.site-title {
+  margin: 0;
+  font-size: 2.4em;
+  font-weight: 800;
+  text-transform: uppercase;
+  a {
+    color: @global-color;
+  }
+}
+
+
+/*
+ * Primary menu
+ */
+.pri-nav {
+  background: @conquest-primary-menu-bottom-bg;
+  padding-bottom: 30px;
+  .inner {
+    padding-top: 20px;
+    background: @conquest-primary-menu-top-bg;
+    border-bottom: 2px solid @conquest-primary-menu-top-link;
+    ul#menu-main-menu {
+      position: relative;
+      margin-top: 0;
+      margin-bottom: 0;
+      list-style-type: none;
+      & > li {
+        float: left;
+        margin-right: 6px;
+        & > a {
+          display: inline-block;
+          padding: 6px 15px;
+          color: #fff;
+          text-transform:  uppercase;
+          font-weight: 400;
+          font-size: 0.875em;
+          &:hover {
+            color: @conquest-primary-menu-top-bg;
+            background: @conquest-primary-menu-top-link;
+          }
+        }
+        ul {
+          display: none;
+        }
+        &.current-menu-item,
+        &.current-post-ancestor {
+          & > a {
+            color: @conquest-primary-menu-top-bg;
+            background: @conquest-primary-menu-top-link;
+          }
+          ul {
+            display: block;
+          }
+        }
+        & > ul {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          margin-top: -2px;
+          padding-top: 2px;
+        }
+        ul {
+          list-style-type: none;
+          li {
+            float: left;
+            a {
+              display: inline-block;
+              padding: 7px 12px 5px;
+              color: white;
+              font-size: 0.875em;
+            }
+            &.current-menu-item a,
+            &.current-post-parent a {
+              color: @conquest-primary-menu-top-link;
+            }
+          }
+        }
+        &:hover ul {
+          display: block;
+        }
+        &.current-menu-parent ul {
+          display: block;
+        }
+        &.current-menu-parent > a {
+          color: @conquest-primary-menu-top-bg;
+          background: @conquest-primary-menu-top-link;
+        }
+      }
+    }
+  }
+}
+
+#mobile-nav {
+  position: relative;
+  background: #1f1d1d;
+}     
+  #mobile-nav ul li {
+    float: none;
+  }
+    #mobile-nav ul li ul {
+      display: none;
+      margin: 0;
+      padding: 0;
+      background: #303848;
+    }
+    
+  #mobile-nav .menu > li > a {
+    position: absolute;
+    bottom: 100%;
+    right: 10px;
+    width: 56px;
+    height: 56px;
+    background: url(../images/icons/icon-menu-white.png) 50% 50% no-repeat;/* Preload */
+    background: url(../images/icons/icon-menu-dark.png) 50% 50% no-repeat;
+    text-indent: -9999px;
+  }
+    #mobile-nav .menu > li > a.active {
+      background: url(../images/icons/icon-menu-white.png) 50% 50% no-repeat #1f1d1d;
+    }
+    
+  #mobile-nav .menu > li > ul > li > a {
+    display: block;
+    padding: 1em;
+    color: white;
+    font-size: 0.857em;
+    text-transform: uppercase;
+    background: #1f1d1d;
+    border-bottom: 1px solid #252525;
+  }
+    #mobile-nav .menu > li > ul > li > a.active {
+      border-bottom: 2px solid #ffd800;
+    }
+    
+    #mobile-nav ul li ul li ul a{
+      display: block;
+      padding: 1em;
+      color: white;
+      border-bottom: 1px solid #3F4757;
+    }
+
+
+/*
+ * Section head
+ */
+#section-head {
+  min-height:2px;
+  background: (@conquest-primary-menu-bottom-bg - #080808);
+  h1 {
+    margin: 0 0 15px;
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 66px;
+  }
+}
+@media only screen and (min-width : @breakpoint-medium) {
+  #section-head {
+    padding: 20px 0 50px;
+  }
+}
+
+
+/*
+ * Content area
+ */
+#content {
+  #content-inner {
+    padding: 10px;
+    background: #fff;
+  }
+}
+@media only screen and (min-width : @breakpoint-medium) {
+  #content {
+    margin-top: -50px;
+  }
+}
+
+
+/*
+ * Sidebar
+ */
+.sidebar {
+  .widget {
+    .widget-title {
+      display: inline-block;
+      margin: 0;
+      padding: 8px 10px;
+      background: @conquest-primary-menu-top-link;
+      font-weight: 700;
+      font-size: 0.857em;
+      line-height: 1em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+/*
+ * Articles
+ */
+#primary {
+  position: relative;
+  .post-author {
+    font-family: @base-body-alt-font-family;
+    font-style: italic;
+    -webkit-text-stroke: 0.1px;
+  }
+  .comment-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+@media only screen and (min-width : @breakpoint-medium) {
+  #primary {
+    .post-title {
+      margin-right: 100px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
