@@ -518,7 +518,7 @@ a:hover {
   text-decoration: underline;
 }
 a {
-  color: #0077dd;
+  color: #ff003c;
 }
 a:hover {
   color: #005599;
@@ -943,7 +943,6 @@ iframe {
   border: 0.0725em solid #0088cc;
   border-radius: 0.0725em;
   margin-right: 0.3125em;
-  margin-bottom: 0.3125em;
 }
 .btn,
 .btn:hover,
@@ -2014,7 +2013,7 @@ ul.uk-nav-sub {
  * Nested items
  */
 .uk-nav-side ul a {
-  color: #0077dd;
+  color: #ff003c;
 }
 .uk-nav-side ul a:hover {
   color: #005599;
@@ -2058,7 +2057,7 @@ ul.uk-nav-sub {
  * Nested items
  */
 .uk-nav-dropdown ul a {
-  color: #0077dd;
+  color: #ff003c;
 }
 .uk-nav-dropdown ul a:hover {
   color: #005599;
@@ -2102,7 +2101,7 @@ ul.uk-nav-sub {
  * Nested items
  */
 .uk-nav-navbar ul a {
-  color: #0077dd;
+  color: #ff003c;
 }
 .uk-nav-navbar ul a:hover {
   color: #005599;
@@ -2142,7 +2141,7 @@ ul.uk-nav-sub {
  * Nested items
  */
 .uk-nav-search ul a {
-  color: #0077dd;
+  color: #ff003c;
 }
 .uk-nav-search ul a:hover {
   color: #005599;
@@ -2258,7 +2257,7 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
  * Items
  */
 .uk-subnav > li > a {
-  color: #0077dd;
+  color: #ff003c;
 }
 .uk-subnav > li > a:hover {
   color: #005599;
@@ -2555,7 +2554,7 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   padding: 8px 12px;
   border: 1px solid transparent;
   border-bottom-width: 0;
-  color: #0077dd;
+  color: #ff003c;
   text-decoration: none;
 }
 .uk-tab > li:nth-child(n+2) > a {
@@ -3455,7 +3454,7 @@ a.uk-button {
 }
 /* Color */
 .uk-button-link {
-  color: #0077dd;
+  color: #ff003c;
 }
 .uk-button-link:hover,
 .uk-button-link:focus,
@@ -6579,7 +6578,16 @@ input.uk-search-field {
   display: none;
 }
 /*
- * Ad blocks
+ * Share links
+ */
+.social-sharing {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+}
+/*
+ * Comment counts
  */
 .comment-count a {
   display: inline-block;
@@ -6591,22 +6599,22 @@ input.uk-search-field {
   display: block;
   background: #1f1d1d;
   text-align: center;
-  font-size: 1.8em;
+  font-size: 1em;
   font-weight: 700;
 }
 .comment-count a .count:after {
   content: '';
   position: absolute;
   top: 100%;
-  right: 1px;
+  left: 5px;
   width: 0px;
   height: 0px;
   border-style: solid;
-  border-width: 5px 5px 0 0;
-  border-color: #1f1d1d transparent transparent transparent;
+  border-width: 0 5px 5px 0;
+  border-color: transparent #1f1d1d transparent transparent;
 }
 .comment-count a .label {
-  font-size: 0.5em;
+  font-size: 0.75em;
   color: #222222;
   text-transform: uppercase;
 }
@@ -6615,6 +6623,9 @@ input.uk-search-field {
 }
 .comment-count a:hover .count {
   background: #ff003c;
+}
+.comment-count a:hover .count:after {
+  border-color: transparent #ff003c transparent transparent;
 }
 .comment-count.large {
   text-align: right;
@@ -6628,9 +6639,7 @@ input.uk-search-field {
   }
   .comment-count.large a .count {
     padding: 10px 30px;
-  }
-  .comment-count.large a .label {
-    font-size: 0.75em;
+    font-size: 1.8em;
   }
 }
 /*
@@ -6638,6 +6647,23 @@ input.uk-search-field {
  */
 .ad-block img {
   display: block;
+}
+#section-head .ad-block img {
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  #section-head .ad-block {
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (min-width: 960px) {
+  #section-head .ad-block {
+    float: right;
+    margin-bottom: 15px;
+  }
+  #section-head .ad-block img {
+    margin: 0;
+  }
 }
 /*
  * Search form
@@ -6823,7 +6849,7 @@ form.search-form input.search-submit {
 }
 @media only screen and (min-width: 768px) {
   #section-head {
-    padding: 20px 0 50px;
+    padding: 15px 0 50px;
   }
 }
 /*
@@ -6851,6 +6877,12 @@ form.search-form input.search-submit {
   line-height: 1em;
   text-transform: uppercase;
 }
+.sidebar a {
+  color: #222222;
+}
+.sidebar a:hover {
+  color: #ff003c;
+}
 /*
  * Articles
  */
@@ -6858,9 +6890,13 @@ form.search-form input.search-submit {
   position: relative;
 }
 #primary .post-author {
+  color: #999999;
   font-family: 'Bitter', Georgia, Serif;
   font-style: italic;
   -webkit-text-stroke: 0.1px;
+}
+#primary .post-author .author-social {
+  color: #222222;
 }
 #primary .comment-count {
   position: absolute;

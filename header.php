@@ -36,8 +36,8 @@
 
 	<div id="section-head">
 		<div class="uk-container uk-container-center uk-clearfix">
-			<h1 id="section-name" class="uk-float-left uk-hidden-small">News</h1>
-			<div class="ad-block uk-float-right">
+			<h1 id="section-name" class="uk-float-left uk-visible-large">News</h1>
+			<div class="ad-block">
 				<img src="http://www.dummyimage.com/660x66/1B1E25/fff">
 			</div>
 		</div>

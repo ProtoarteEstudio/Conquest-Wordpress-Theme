@@ -10,6 +10,9 @@
  */
 require_once ('admin/index.php');
 require get_template_directory() . '/inc/conquest-menus.php';
+require get_template_directory() . '/inc/conquest-user.php';
+require get_template_directory() . '/inc/conquest-widgets.php';
+require get_template_directory() . '/inc/template-tags.php';
 
 
 /**
@@ -27,10 +30,10 @@ function conquest_scripts() {
 add_action( 'wp_enqueue_scripts', 'conquest_scripts' );
 
 
-if ( ! function_exists( 'conquest_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  */
+if ( ! function_exists( 'conquest_setup' ) ) :
 function conquest_setup() {
 	load_theme_textdomain( 'conquest', get_template_directory() . '/languages' );
 
@@ -45,6 +48,7 @@ function conquest_setup() {
 }
 endif; // conquest_setup
 add_action( 'after_setup_theme', 'conquest_setup' );
+
 
 /**
  * Register widgetized area and update sidebar with default widgets.
@@ -62,23 +66,35 @@ function conquest_widgets_init() {
 add_action( 'widgets_init', 'conquest_widgets_init' );
 
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-
 /*
  * Add featured image support
  */
 add_theme_support( 'post-thumbnails' ); 
 
+
 /*
  * Define custom image sizes
  */
 if ( function_exists( 'add_image_size' ) ) { 
-  add_image_size( 'featured-image', 850, 9999 ); //300 pixels wide (and unlimited height)
+  add_image_size( 'featured-image', 850, 9999 ); //850 pixels wide and unlimited height
+  add_image_size( 'post-thumb-tiny', 80, 60 ); //80 x 60 pixels
 }
+
+/*
+ * Social sharing links
+ */
+function conquest_social_sharing( $post_title, $post_url, $post_excerpt ) {
+	$social_links = '<div class="social-sharing">';
+	$social_links .= 'Share<span class="uk-hidden-small"> this article on:</span> ';
+	$social_links .= '<a class="btn btn-tweet" target="_blank" href="https://twitter.com/intent/tweet?text=' . $post_title .'&url=' . $post_url .'&via=TWITTER-HANDLE"><i class="foundicon-twitter"></i><span class="uk-hidden-small"> Twitter</span></a>';
+	$social_links .= '<a class="btn btn-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=' . $post_url .'"><i class="foundicon-facebook"></i><span class="uk-hidden-small"> Facebook</span></a>';
+	$social_links .= '<a class="btn btn-google" target="_blank" href="https://plus.google.com/share?url=' . $post_url .'"><i class="foundicon-google-plus"></i><span class="uk-hidden-small"> Google+</span></a>';
+	$social_links .= '<a class="btn btn-linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=' . $post_url .'&title=' . $post_title .'&summary=' . $post_excerpt .'&source=<?php echo get_permalink(); ?>"><i class="foundicon-linkedin"></i><span class="uk-hidden-small"> LinkedIn</span></a>';
+	$social_links .= '<a class="btn btn-pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url=' . $post_url .'&description=' . $post_excerpt .'&media=YOUR-IMAGE-SRC"><i class="foundicon-pinterest"></i><span class="uk-hidden-small"> Pinterest</span></a>';
+	$social_links .= '</div>';
+	print $social_links;
+}
+
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.

@@ -1,5 +1,0 @@
-<?php
-/*
- * Conquest theme functions
- */
-
