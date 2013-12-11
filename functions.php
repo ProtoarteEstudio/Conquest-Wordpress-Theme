@@ -59,8 +59,8 @@ function conquest_widgets_init() {
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 }
 add_action( 'widgets_init', 'conquest_widgets_init' );
@@ -77,7 +77,7 @@ add_theme_support( 'post-thumbnails' );
  */
 if ( function_exists( 'add_image_size' ) ) { 
   add_image_size( 'featured-image', 850, 9999 ); //850 pixels wide and unlimited height
-  add_image_size( 'post-thumb-tiny', 80, 60 ); //80 x 60 pixels
+  add_image_size( 'post-thumb-tiny', 80, 60, true ); //80 x 60 pixels
 }
 
 /*
@@ -85,7 +85,7 @@ if ( function_exists( 'add_image_size' ) ) {
  */
 function conquest_social_sharing( $post_title, $post_url, $post_excerpt ) {
 	$social_links = '<div class="social-sharing">';
-	$social_links .= 'Share<span class="uk-hidden-small"> this article on:</span> ';
+	$social_links .= 'Share: ';
 	$social_links .= '<a class="btn btn-tweet" target="_blank" href="https://twitter.com/intent/tweet?text=' . $post_title .'&url=' . $post_url .'&via=TWITTER-HANDLE"><i class="foundicon-twitter"></i><span class="uk-hidden-small"> Twitter</span></a>';
 	$social_links .= '<a class="btn btn-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=' . $post_url .'"><i class="foundicon-facebook"></i><span class="uk-hidden-small"> Facebook</span></a>';
 	$social_links .= '<a class="btn btn-google" target="_blank" href="https://plus.google.com/share?url=' . $post_url .'"><i class="foundicon-google-plus"></i><span class="uk-hidden-small"> Google+</span></a>';

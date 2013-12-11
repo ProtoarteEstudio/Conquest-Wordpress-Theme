@@ -373,31 +373,14 @@ form.search-form {
  * Sidebar
  */
 .sidebar {
-  .widget {
-    .widget-title {
-      display: inline-block;
-      margin: 0;
-      padding: 8px 10px;
-      background: @conquest-primary-menu-top-link;
-      font-weight: 700;
-      font-size: 0.857em;
-      line-height: 1em;
-      text-transform: uppercase;
-    }
-  }
-  a {
-    color: @global-color;
-    &:hover {
-      color: @global-link-color;
-    }
-  }
+  
 }
 
 
 /*
  * Articles
  */
-#primary {
+.article {
   position: relative;
   .post-author {
     color: @global-muted-color;
@@ -415,13 +398,82 @@ form.search-form {
   }
 }
 @media only screen and (min-width : @breakpoint-medium) {
-  #primary {
+  .article {
     .post-title {
       margin-right: 100px;
     }
   }
 }
 
+
+/*
+ * Widgets
+ */
+.widget {
+  margin-bottom: @global-large-margin;
+  .widget-title {
+    display: inline-block;
+    margin: 0 0 @global-margin 0;
+    padding: 8px 10px;
+    background: @conquest-primary-menu-top-link;
+    font-weight: 700;
+    font-size: 0.857em;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+  ul {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+  }
+  &.widget_conquest_latest_articles_widget {
+    ul {
+      li.post {
+        margin-bottom: @global-large-margin;
+        a {
+          display: block;
+          .featured-image {
+            position: relative;
+            margin-right: @global-margin;
+            margin-top: 3px;
+            .comment-count {
+              position: absolute;
+              top: -3px;
+              right: -3px;
+              display: block;
+              padding: 0px 8px;
+              background: @conquest-primary-menu-top-bg;
+              text-align: center;
+              font-size: 0.75em;
+              font-weight: 700;
+              color: white;
+              &:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 5px;
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-width: 0 5px 5px 0;
+                border-color: transparent @conquest-primary-menu-top-bg transparent transparent;
+              }
+            }
+          }
+          h4 {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+a {
+  color: @global-color;
+  &:hover {
+    color: @global-link-color;
+  }
+}
 
 
 

@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-		<article id="primary" class="content-area">
+		<article id="primary" class="article content-area">
 			<?php while ( have_posts() ) : the_post(); ?>
 			<?php the_tags( '<div class="tags uk-clearfix"><span class="uk-float-left">Tags</span><ul class="menu inline uk-float-left"><li class="tag first">', '</li><li class="tag">', '</li></ul></div>'); ?> 
 				

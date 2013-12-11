@@ -6867,9 +6867,40 @@ form.search-form input.search-submit {
 /*
  * Sidebar
  */
-.sidebar .widget .widget-title {
+/*
+ * Articles
+ */
+.article {
+  position: relative;
+}
+.article .post-author {
+  color: #999999;
+  font-family: 'Bitter', Georgia, Serif;
+  font-style: italic;
+  -webkit-text-stroke: 0.1px;
+}
+.article .post-author .author-social {
+  color: #222222;
+}
+.article .comment-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@media only screen and (min-width: 768px) {
+  .article .post-title {
+    margin-right: 100px;
+  }
+}
+/*
+ * Widgets
+ */
+.widget {
+  margin-bottom: 20px;
+}
+.widget .widget-title {
   display: inline-block;
-  margin: 0;
+  margin: 0 0 10px 0;
   padding: 8px 10px;
   background: #ffd800;
   font-weight: 700;
@@ -6877,36 +6908,53 @@ form.search-form input.search-submit {
   line-height: 1em;
   text-transform: uppercase;
 }
-.sidebar a {
-  color: #222222;
+.widget ul {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
 }
-.sidebar a:hover {
-  color: #ff003c;
+.widget.widget_conquest_latest_articles_widget ul li.post {
+  margin-bottom: 20px;
 }
-/*
- * Articles
- */
-#primary {
+.widget.widget_conquest_latest_articles_widget ul li.post a {
+  display: block;
+}
+.widget.widget_conquest_latest_articles_widget ul li.post a .featured-image {
   position: relative;
+  margin-right: 10px;
+  margin-top: 3px;
 }
-#primary .post-author {
-  color: #999999;
-  font-family: 'Bitter', Georgia, Serif;
-  font-style: italic;
-  -webkit-text-stroke: 0.1px;
+.widget.widget_conquest_latest_articles_widget ul li.post a .featured-image .comment-count {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  display: block;
+  padding: 0px 8px;
+  background: #1f1d1d;
+  text-align: center;
+  font-size: 0.75em;
+  font-weight: 700;
+  color: white;
 }
-#primary .post-author .author-social {
+.widget.widget_conquest_latest_articles_widget ul li.post a .featured-image .comment-count:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 5px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 5px 5px 0;
+  border-color: transparent #1f1d1d transparent transparent;
+}
+.widget.widget_conquest_latest_articles_widget ul li.post a h4 {
+  margin: 0;
+}
+a {
   color: #222222;
 }
-#primary .comment-count {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-@media only screen and (min-width: 768px) {
-  #primary .post-title {
-    margin-right: 100px;
-  }
+a:hover {
+  color: #ff003c;
 }
 /* Need to be loaded last */
 /*
