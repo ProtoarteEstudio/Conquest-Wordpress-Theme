@@ -15,6 +15,8 @@ get_header(); ?>
 
 			<p class="post-author">By <?php the_author_posts_link(); ?><small> on <?php the_date(); ?> <i class="foundicon-chat"></i><a href="mailto:<?php print get_the_author_meta( 'user_email' ); ?> " target="_blank" class="author-social">Email</a> <i class="foundicon-twitter"></i><a href="http://twitter.com/<?php print get_the_author_meta( 'twitter' ); ?>" target="_blank" class="author-social">twitter</a></small></p>
 
+			<?php conquest_social_sharing( get_the_title(), get_permalink(),  get_the_excerpt() ); ?>
+
 			<div class="comment-count large">
 				<a href="#comments"><?php comments_number( '<span class="count">0</span> <span class="label uk-hidden-small">comments</span>', '<span class="count">1</span> <span class="label uk-hidden-small">comment</span>', '<span class="count">%</span> <span class="label uk-hidden-small">comments</span>' ); ?></a>
 			</div>
@@ -22,9 +24,7 @@ get_header(); ?>
 
 			<div class="uk-grid">
 				<div class="post-content uk-width-large-4-6">
-				<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php conquest_social_sharing( get_the_title(), get_permalink(),  get_the_excerpt() ); ?>
+				<?php while ( have_posts() ) : the_post(); ?>				
 
 				<?php if ( has_post_thumbnail() ) {
 					print '<div class="featured-image">';

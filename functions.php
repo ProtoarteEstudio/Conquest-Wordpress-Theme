@@ -4,7 +4,8 @@
  *
  * @package conquest
  */
-
+update_option('siteurl','http://192.168.0.10:81');
+update_option('home','http://192.168.0.10:81');
 /**
  * Includes
  */
@@ -85,12 +86,11 @@ if ( function_exists( 'add_image_size' ) ) {
  */
 function conquest_social_sharing( $post_title, $post_url, $post_excerpt ) {
 	$social_links = '<div class="social-sharing">';
-	$social_links .= 'Share: ';
-	$social_links .= '<a class="btn btn-tweet" target="_blank" href="https://twitter.com/intent/tweet?text=' . $post_title .'&url=' . $post_url .'&via=TWITTER-HANDLE"><i class="foundicon-twitter"></i><span class="uk-hidden-small"> Twitter</span></a>';
-	$social_links .= '<a class="btn btn-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=' . $post_url .'"><i class="foundicon-facebook"></i><span class="uk-hidden-small"> Facebook</span></a>';
-	$social_links .= '<a class="btn btn-google" target="_blank" href="https://plus.google.com/share?url=' . $post_url .'"><i class="foundicon-google-plus"></i><span class="uk-hidden-small"> Google+</span></a>';
-	$social_links .= '<a class="btn btn-linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=' . $post_url .'&title=' . $post_title .'&summary=' . $post_excerpt .'&source=<?php echo get_permalink(); ?>"><i class="foundicon-linkedin"></i><span class="uk-hidden-small"> LinkedIn</span></a>';
-	$social_links .= '<a class="btn btn-pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url=' . $post_url .'&description=' . $post_excerpt .'&media=YOUR-IMAGE-SRC"><i class="foundicon-pinterest"></i><span class="uk-hidden-small"> Pinterest</span></a>';
+	$social_links .= '<a class="btn btn-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=' . $post_url .'"><i class="foundicon-facebook"></i><span class="uk-hidden-small"> Share</span></a>';
+	$social_links .= '<a class="btn btn-google" target="_blank" href="https://plus.google.com/share?url=' . $post_url .'"><i class="foundicon-google-plus"></i><span class="uk-hidden-small"> Share</span></a>';
+	$social_links .= '<a class="btn btn-linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=' . $post_url .'&title=' . $post_title .'&summary=' . $post_excerpt .'&source=<?php echo get_permalink(); ?>"><i class="foundicon-linkedin"></i><span class="uk-hidden-small"> Share</span></a>';
+    $social_links .= '<a class="btn btn-tweet" target="_blank" href="https://twitter.com/intent/tweet?text=' . $post_title .'&url=' . $post_url .'&via=TWITTER-HANDLE"><i class="foundicon-twitter"></i><span class="uk-hidden-small"> Tweet</span></a>';
+	$social_links .= '<a class="btn btn-pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url=' . $post_url .'&description=' . $post_excerpt .'&media=YOUR-IMAGE-SRC"><i class="foundicon-pinterest"></i><span class="uk-hidden-small"> Pin</span></a>';
 	$social_links .= '</div>';
 	print $social_links;
 }

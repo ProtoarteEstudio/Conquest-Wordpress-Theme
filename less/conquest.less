@@ -47,10 +47,8 @@
  * Share links
  */
 .social-sharing {
-  padding: 10px;
-  margin-bottom: 10px;
-  background: #f9f9f9;
-  border: 1px solid #eee;
+  margin-bottom: @global-margin;
+
 }
 
 
@@ -90,6 +88,7 @@
       text-decoration: none;
       .count {
         background: @global-link-color;
+        color: white;
         &:after {
           border-color: transparent @global-link-color transparent transparent;
         }
@@ -229,6 +228,7 @@ form.search-form {
           &:hover {
             color: @conquest-primary-menu-top-bg;
             background: @conquest-primary-menu-top-link;
+            text-decoration: none;
           }
         }
         ul {

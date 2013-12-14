@@ -6581,10 +6581,7 @@ input.uk-search-field {
  * Share links
  */
 .social-sharing {
-  padding: 10px;
   margin-bottom: 10px;
-  background: #f9f9f9;
-  border: 1px solid #eee;
 }
 /*
  * Comment counts
@@ -6623,6 +6620,7 @@ input.uk-search-field {
 }
 .comment-count a:hover .count {
   background: #ff003c;
+  color: white;
 }
 .comment-count a:hover .count:after {
   border-color: transparent #ff003c transparent transparent;
@@ -6740,6 +6738,7 @@ form.search-form input.search-submit {
 .pri-nav .inner ul#menu-main-menu > li > a:hover {
   color: #1f1d1d;
   background: #ffd800;
+  text-decoration: none;
 }
 .pri-nav .inner ul#menu-main-menu > li ul {
   display: none;
